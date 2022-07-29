@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="STYLESHEET" href="print_static.css" type="text/css" />
+</head>
+
+<body>
+<script type="text/php">
+if ( isset($pdf) ) {
+
+  $font = Font_Metrics::get_font("verdana");
+  $size = 6;
+  $color = array(0,0,0);
+  $text_height = Font_Metrics::get_font_height($font, $size);
+
+  $foot = $pdf->open_object();
+  
+  $w = $pdf->get_width();
+  $h = $pdf->get_height();
+
+  // Draw a line along the bottom
+  $y = $h - $text_height - 24;
+  $pdf->line(16, $y, $w - 16, $y, $color, 0.5);
+
+  $y += $text_height;
+
+  $text = "<table width='200' border='1'></table>";
+  $pdf->text(100,100 , $text, $font, $size, $color);
+  $pdf->close_object();
+  $pdf->add_object($foot, "all");
+
+  global $initials;
+  $initials = $pdf->open_object();
+  
+  // Add an initals box
+  $text = "Initials:";
+  $width = Font_Metrics::get_text_width($text, $font, $size);
+  $pdf->text($w - 16 - $width - 38, $y, $text, $font, $size, $color);
+  $pdf->rectangle($w - 16 - 36, $y - 2, 36, $text_height + 4, array(0.5,0.5,0.5), 0.5);
+    
+
+  $pdf->close_object();
+  $pdf->add_object($initials);
+  
+ 
+ 
+  // Mark the document as a duplicate
+  $pdf->text(110, $h - 240, "COPIA CONTROLADA {PAGE_NUM}", Font_Metrics::get_font("verdana", "bold"),
+             110, array(0.85, 0.85, 0.85), 0, -52);
+$leo='aaaaa';
+  $text = "Pagina {PAGE_NUM} de {PAGE_COUNT} de $leo";  
+
+  // Center the text
+  $width = Font_Metrics::get_text_width("Page 1 of 2", $font, $size);
+  $pdf->page_text($width, $y, $text, $font, $size, $color);
+  
+}
+</script>
+<div id="body">
+
+<div id="section_header">
+</div>
+
+<div id="content">
+  
+<div class="page" style="font-size: 7pt">
+<table width="100%" border="0">
+  <tr>
+    <td>
+
+<table width="100%" border="0">
+  <tr>
+    <td><link href="../css/styles.css" rel="stylesheet" type="text/css">
+<link href="../css/stylesforms.css" rel="stylesheet" type="text/css">
+<table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+  <tr>
+
+    <td rowspan="3" bgcolor="#FFFFFF" align="center"><div align="center" class="Estilo1" bgcolor="#FFFFFF"><img src="../images/logo.jpg" width="160" height="74"/></div></td>
+	    <td colspan="2" bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">FORMATO DE COTIZACION EXPORTACION MARITIMA FCL</div></td>
+    <td bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">VERSION 1 </div></td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">FIA-ADC-052</div></td>
+    <td bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">FECHA FEBRERO DEL 2008</div></td>
+
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">COTIZACION No </div></td>
+    <td bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1" bgcolor="#FFFFFF">CZ10020002</div></td>
+    <td bgcolor="#FFFFFF" class="titulosup02"><div align="center" class="Estilo1">PAGINA 1 DE 1</div></td>
+  </tr>
+</table>
+
+</td>
+  </tr>
+  <tr>
+      <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+	<table  width="100%" cellspacing="0" class="textotabla1" >
+	<tr>
+
+		
+		<td width="48%" align="center" bgcolor="#FFFFFF" valign="top">
+				<table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+          <tr>
+            <td bgcolor="#FFFFFF">
+			<table width="97%" border="0" cellpadding="1" bordercolor="#000000" >
+          <tr>
+            <td width="35%" class="textotabla11">FECHA</td>
+            <td width="65%" class="titulosup01">2010-03-05</td>
+
+          </tr>
+          <tr>
+            <td class="textotabla1">SE&Ntilde;ORES</td>
+            <td class="titulosup01">DECORDANCO</td>
+          </tr>
+          <tr>
+            <td class="textotabla1">ATN. SR </td>
+
+            <td class="titulosup01">SANDRA CAMPO MORENO </td>
+          </tr>
+          <tr>
+            <td class="textotabla1">E-MAIL</td>
+            <td class="titulosup01"><span class="titulosup01">nidia.carrillo@jmclogistics.com            </span></td>
+          </tr>
+          <tr>
+
+            <td class="textotabla1">MERCANCIA:</td>
+            <td class="titulosup01"><span class="titulosup01">
+              NO PELIGROSA            </span></td>
+          </tr>
+          <tr>
+            <td class="textotabla1">TIPO:</td>
+            <td class="titulosup01"><span class="titulosup01">
+
+              CERAMICA            </span></td>
+          </tr>
+          
+		   <tr>
+            <td class="textotabla1">MONEDA</td>
+            <td class="titulosup01"><span class="titulosup01">
+              DÓLAR AMERICANO            </span></td>
+          </tr>
+
+		   <tr>
+		     <td class="textotabla1">TERMINO DE NEGOCIACION </td>
+		     <td class="titulosup01" ><span class="Estilo1">
+		       FOB		     </span></td>
+		     </tr>
+		   <tr>
+            <td class="textotabla1"><div align="center" class="Estilo1"></div></td>
+            <td class="titulosup02" ><div align="center" class="Estilo1"></div></td>
+
+          </tr>
+        </table>
+			</td>
+          </tr>
+        </table>		</td>
+		<td colspan="3" class="titulos">&nbsp;</td>
+		<td width="48%" colspan="3" bgcolor="#FFFFFF" valign="top"><table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+          <tr>
+
+            <td bgcolor="#FFFFFF"  valign="top">
+			<table width="98%" border="0" align="center" >
+          <tr>
+		              <td class="textotabla1"  > <div align="center" class="Estilo1" >JMC LOGISTICS CARGO LTDA</div></td>
+          </tr>
+          <tr>
+            <td align="center" class="textotabla1"><div align="center" class="Estilo1">NIT 8301215864 </div></td>
+
+          </tr>
+          <tr>
+            <td align="center" class="textotabla1"><div align="center" class="Estilo1">CALLE 25C N 84B-05 OF 401 </div></td>
+          </tr>
+		   <tr>
+            <td align="center" class="textotabla1"><div align="center" class="Estilo1">PBX (571) 4108238/4299982</div></td>
+          </tr>
+		   <tr>
+
+            <td align="center" class="textotabla1"><div align="center" class="Estilo1">FAX 4299474 </div></td>
+          </tr>
+		   
+		   <tr>
+            <td align="center" class="mail"><div align="center" class="Estilo1">yill_mr@hotmail.com</div></td>
+          </tr>
+		   <tr>
+            <td align="center" class="mail"><div align="center" class="Estilo1">diana.cornejo@mclogisticscargo.com</div></td>
+
+          </tr>
+		   <tr>
+		     <td align="center" class="mail"><span class="Estilo1">
+		      <div align="center" class="Estilo1"> www.jmclogistics.com</div>
+		     </span></td>
+		     </tr>
+		   <tr>
+            <td align="center" class="mail"></td>
+
+          </tr>
+      </table>
+			</td>
+          </tr>
+        </table>		</td>
+	</tr>
+</table>
+	</td>
+  </tr>
+
+  <tr> <td class="textotabla1"></td></tr>
+  <tr> <td class="textotabla1"><div align="justify" class="Estilo1">DE ACUERDO CON SU AMABLE SOLICITUD DE COTIZACION DE TRANSPORTE INTERNACIONAL A CONTINUACION NOS PERMITIMOS INFORMAR LAS TARIFAS VIGENTES DE CARGA NO PELIGROSA PARA DICHO TRAYECTO, LAS CUALES ESTAMOS SEGUROS SERAN FAVORABLE A SU INTERES. </div></td></tr>
+  
+</table>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<table  width="100%" cellspacing="0" class="textotabla1" >
+
+	<tr>
+	  <td width="47%" align="center" bgcolor="#FFFFFF" valign="top"><table width="100%" border="0" cellpadding="1" bgcolor="#000000">
+          <tr>
+            <td bgcolor="#FFFFFF">
+			<table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0" >
+          <tr>
+		  	  	            <td class="subfongris" align="center" >EXPORTACION MARITIMA FCL</td>
+
+            </tr>
+
+          <tr>
+            <td class="titulosup01">&nbsp;COTIZACION BASADA EN </td>
+            </tr>
+          <tr>
+            <td class="textotabla1"><table  width="100%" cellspacing="1" class="textotabla1" >
+	<tr>
+		
+		<td align="center" valign="top" bgcolor="#FFFFFF"><table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+          <tr>
+
+            <td width="22%" class="textotabla01" bgcolor="#FFFFFF">No PIEZAS </td>
+            <td width="21%" class="textotabla01" bgcolor="#FFFFFF">4</td>
+            <td width="27%" class="textotabla01" bgcolor="#FFFFFF">PESO BRUTO KGS </td>
+            <td width="30%" class="textotabla01" bgcolor="#FFFFFF">108</td>
+          </tr>
+          <tr>
+            <td class="textotabla01" bgcolor="#FFFFFF">KILO VOLUMEN </td>
+
+            <td class="textotabla01" bgcolor="#FFFFFF"></td>
+            <td class="textotabla01" bgcolor="#FFFFFF">VALOR SEGUN TERMINO ADUANA USD</td>
+            <td class="textotabla01" bgcolor="#FFFFFF">28951</td>
+          </tr>
+          <tr>
+            <td class="textotabla01" bgcolor="#FFFFFF">DIMENSION</td>
+             		    <td class="textotabla01" bgcolor="#FFFFFF">0</td>
+
+            			<td class="textotabla01" bgcolor="#FFFFFF">TRAYECTO</td>
+          
+            <td class="textotabla01" bgcolor="#FFFFFF">BRASIL-SANTOS  /   COLOMBIA-CARTAGENA</td>
+                      </tr>
+        </table></td>
+		</tr>
+</table></td>
+            </tr>
+        </table>
+
+	</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><img src="../imagenes/spacer.gif" width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="6%" class="subfongris">PAIS</td>
+
+        <td width="11%" class="subfongris">ORIGEN</td>
+        		 
+        <td class="subfongris">TIEMPO DE TRANSITO </td>
+        <td width="12%" class="subfongris">FRECUENCIA</td>
+        <td width="8%" class="subfongris">TARIFA A VIGENTE </td>
+      </tr>
+ 
+      <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">BRASIL</td>
+
+        <td bgcolor="#FFFFFF" class="textotabla01"><span class="textotabla01">
+          SANTOS        </span></td>
+           <td bgcolor="#FFFFFF" class="textotabla01" ><span class="textotabla01">
+	          15 A 17        </span></td>
+        <td bgcolor="#FFFFFF" class="textotabla01"><span class="textotabla01">
+          SEMANAL        </span></td>
+        <td bgcolor="#FFFFFF" class="textotablanum"><span class="textotablanum">
+
+			
+          30 DE MARZO DEL 2010        </span></td>
+         </tr>
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><img src="../imagenes/spacer.gif" width="100%" height="4" /></td>
+  </tr>
+  <tr>
+
+    <td bgcolor="#FFFFFF"><table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="-1">
+      <tr>
+        <td colspan="7" class="subfongris">COSTO NO INCLUIDOS EN LAS TARIFAS </td>
+        </tr>
+      <tr>
+        <td width="26%" rowspan="2" class="titulosup02" bgcolor="#FFFFFF">RECARGO EN ORIGEN </td>
+        <td colspan="2"  class="titulosup02" bgcolor="#FFFFFF">TARIFAS</td>
+
+        <td colspan="2" class="titulosup02" bgcolor="#FFFFFF">MINIMA</td>
+        <td colspan="2" class="titulosup02" bgcolor="#FFFFFF">LIQUIDACION</td>
+        </tr>
+      <tr>
+        <td width="11%" class="titulosup02" bgcolor="#FFFFFF">USD / KG </td>
+        <td width="10%" class="titulosup02" bgcolor="#FFFFFF"> USD </td>
+
+        <td width="13%" class="titulosup02" bgcolor="#FFFFFF">USD</td>
+        <td width="13%" class="titulosup02" bgcolor="#FFFFFF">PESOS</td>
+        <td width="13%" class="titulosup02" bgcolor="#FFFFFF">USD</td>
+        <td width="14%" class="titulosup02" bgcolor="#FFFFFF">PESOS</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;COSTOS PORTUARIOS</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;950</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;950.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;1.900.000</td>
+
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;DOCUMENT FEE / BL</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;25</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;25.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;50.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;DISMOUNTING FEE</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;25</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;100.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;200.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;FLETE INTERNACIONAL</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;1209</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;4.836.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;9.672.000</td>
+
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;EMISION / BL</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;25</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;25.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;50.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;COLLECT FEE / BL</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;80.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;PROTECCION A LA CARGA </td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0.35</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;110.45</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;220.892</td>
+
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;AGENCIAMIENTO ADUANERO</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0.35</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;101.33</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;202.657</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;GASTOS AGRUPADOS</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;80000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;80.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;PREINSPECCION DE ADUANA</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;80000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;80.000</td>
+
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;DECLARACION DE IMPORTACION Y DE VALOR C/U 20000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;20.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;40.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;FORMULARIOS C/U 10000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;20000</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;0</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;10.00</td>
+        <td bgcolor="#FFFFFF" class="textotablanum">&nbsp;20.000</td>
+      </tr>
+	        <tr>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+        <td bgcolor="#FFFFFF" class="textotabla01">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="7"  ><table width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF" class="textotabla01">Tasa de cambio aproximada USD - $ </td>
+            <td colspan="2" bgcolor="#FFFFFF" class="textotablanum"><span class="Estilo1">
+              2.000.00            </span></td>
+            <td width="25%" bgcolor="#FFFFFF" class="textotabla01">Valor aproximado </td>
+			            <td width="14%" bgcolor="#FFFFFF" class="textotablanum">6.297.77</td>
+            <td width="14%" bgcolor="#FFFFFF" class="textotablanum">12.595.549</td>
+
+		          </tr>
+          <tr>
+            <td width="19%" bgcolor="#FFFFFF" class="textotabla01">RUTA DE EMBARQUE: </td>
+            <td colspan="6" align="center" bgcolor="#FFFFFF" class="textotabla01">BRASIL-SANTOS  /   COLOMBIA-CARTAGENA</td>
+            </tr>
+        </table></td>
+        </tr>
+
+    </table></td>
+  </tr>
+  
+</table>
+
+</html>
+<table width="100%" border="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+
+    <td><table width="100%" border="0">
+      <tr>
+        <td class="titulosup01">NOTA:</td>
+      </tr>
+      <tr>
+        <td><span class="titulosup01">
+          <ul>
+	<li>LOS COSTOS PORTUARIOS SON ESTIMADOS, ESTE VALOR SERA SOPORTADO CON RECIBOS OFICNIALES DE PUERTO.</li>
+
+	<li>SE OFRECE EXONERACION DE DEPOSITO DE CONTENEDOR</li>
+	<li>SE TIENEN 10 DIAS LIBRES DE CONTENEDOR</li>
+	<li>AL VALOR DEL SEGURO SE LE APLICA EL IVA</li>
+	<li>AL VALOR DEL AGENCIAMIENTO ADUANERO SE LE APLICA EL IVA</li>
+</ul>
+
+
+	<li></li>
+
+</ul>
+
+        </span></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+
+    <td>
+<TABLE width="100%" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0"><TR>
+<TD width="25%" valign="top" class="titulosup01">Elaborado por<BR>
+<FONT class="titulosup01"></FONT><BR>
+<FONT class="titulosup01"> DIANA CORNEJO </FONT>
+</TD>
+<TD width="24%" valign="top" class="titulosup01">Revisado por<BR>
+<FONT class="titulosup01"></FONT><BR>
+<FONT class="titulosup01"> NIDIA CARRILLO </FONT>
+
+</TD>
+<TD width="33%" valign="top" class="titulosup01">Aprobado por<BR>
+<FONT class="titulosup01"></FONT><BR>
+<FONT class="titulosup01"> DIANA CORNEJO</FONT>
+</TD>
+<TD width="18%" valign="top" class="titulosup01">Fecha<BR>
+<FONT class="titulosup01"></FONT><BR>
+<FONT class="titulosup01"> 18/01/08</FONT>
+</TD>
+
+</TR></TABLE>
+
+</td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+Análisis Spaw Editor para PhpNuke - Desarrollonuke.org
+
+Web Autor: http://www.solmetra.com/
+Adaptación y Traducción: Xavi Gil (dgil@tinet.org) 
+y Spacebom - Desarrollonuke.org
+
+SPAW Editor es un editor web WYSIWYG que permite reemplazar los típicos html TEXTAREA por este editor con las funciones típicas de cualquier editor WYSIWYG.
+
+Características:
+1.- Las típicas: negritas,cursivas, subrayados, tablas, colores, insertar imágenes, etc..
+2.- Upload de imágenes sin ningún problema
+3.- Multilenguaje, contiene traducciones al ingles, aleman, italiano...
+4.- Personalización del aspecto utilizando los themes suministrados con este paquete o creando de nuevos.
+
+Documentación Original:
+En la carpeta DOC encontraras la documentación original del SPAW.
+
+SPAW con PhpNuke:
+Se ha probado con exito sobre PhpNuke (5.6, 6.0, 6.5, 6.9 y 7.0), al no utilizar la BD, es aplicable a cualquier versión de phpnuke.
+
+Instalación:
+Copia el contenido de la carpeta HTML a tu sitio Nuke.
+Esto hara que SPAW se instale, junto con 2 ejemplos.
+Para visualizarlos, accede a http://tuweb/spaw.php o http://tuweb/spaw2.php  
+
+Configuración:
+La configuración se encuentra en spaw/config/spaw_control.config.php
+La única variable OBLIGATORIA que tienes que modificar es la URL base de tu sitio ($spaw_base_url). 
+
+Otras variables opcionales que puedes modificar son las siguientes:
+
+$spaw_dir -> Especifica la carpeta donde ha sido instalado el Spaw, por defecto y si no has cambiado nada debe ser la carpeta /spaw
+
+//Valores por defecto
+$spaw_default_toolbars -> ¿Herramientas por defecto?
+$spaw_default_theme -> ¿Theme por defecto?
+$spaw_default_lang -> es (de español) puede cambiarse al gusto.
+$spaw_default_css_stylesheet -> especifica el archivo de estilos.
+
+
+// Añadir el scrit dentro del spaw o como fichero independiente
+$spaw_inline_js -> false;
+
+Cambiando la sentencia true/falsa utilizará el archivo javascript incluido o como independiente.
+
+Las variables a continuación de $spaw_dropdown_data con arrays de 'style', 'font', 'fontsize', 'paragraph', pueden cambiarse sin problemas para definir el estilo, las fuentes, tamaños y los tipos de parrafo a utilizar. (Estilo Microsoft Word)
+
+$spaw_valid_imgs -> Indica las extensiones de imágenes permitidas.
+
+$spaw_upload_allowed -> true; true/false permite o impide el upload de archivos.
+
+$spaw_imglibs -> relaciona mediante arrays las carpetas de uploads de iamgenes, aconsejamos no tocar auqnue puede modificarse si se tiene conocimientos medios.
+
+Ejemplos:
+Dentro de la carpeta "Ejemplos" encontraras la carpeta mensajesAdmin, que reemplaza el textare de Mensajes de Administración por el SPAW (En PhpNuke 6.0 UNICAMENTE)
+Para instalarlo, copia el contenido de la carpeta en tu phpnuke. 
+Importante!!, antes de instalar este ejemplo de MensajesAdministración, haz una copia de seguridad de admin/modules/messages.php (PhpNuke 6.0)
+
+¿Como usar el SPAW dentro de Phpnuke?:
+Puedes usar el Spaw editor para substituir cualquier TEXTAREA que utilice phpnuke. Para ello solo tienes que susbtituir el típico:
+
+echo "<textarea name=\"content\" rows=\"18\" wrap=\"virtual\" cols=\"80\">$content</textarea>";
+
+por esto:
+
+include ("spaw/spaw_control.class.php");
+$sw3 = new SPAW_Wysiwyg('content' /*name*/,$content/*value*/,
+       'es' /*language*/, 'nuke' /*toolbar mode*/, 'blue' /*theme*/,
+       '100%' /*width*/, '300px' /*height*/);
+$sw3->show();
+
+
+
+
+
+Dentro de este punto hay que especificar varios aspectos. Cuando sustituyais un TEXTAREA, fijaros en la etiqueta "name" de este, en el caso del ejemplo "content", al susutituir el código del spaw debereis cambiarle los valores name y value, como en el ejemplo 'content' y '$content' respectivamente.
+
+
+Problemas con PhpNuke:
+Al tratar de integrar el SPAW editor en phpnuke, me he encontrado que no es posible incrustarlo dentro de una FUNCTION, y debe hacerse directamente en el MAIN del fichero. 
+
+Lenguajes, Toolbars y Themes:
+En el ejemplo de este análisis podeis ver que cuando se invoca al script, realiza otra seríe de peticiones de variables, por ejemplo el languaje, que viene definido por "es", en la carpeta 
+/Spaw/lib/lang/nombredetuidioma econtraras los idiomas disponibles, actualmente es (Castellano), y en (English), aunque desde la web principal puedes bajar lenguajes para Alemán, Francés, Italiano y algunos más..sin ningún tipo de complicación puedes editarlos o crear nuevos lenguajes adaptados a tu página, luego con especificar la variable en el editor será suficiente. 
+
+Otro aspecto es el "toolbar mode" en nuestor ejemplo peticionamos el modo "nuke", este ha sido creado por Xavi, pero cada uno puede hacer su script personalizado o utilizar cualquier otro de los que vienen realizados por Solmetra, estos los podeis encontrar en la carpeta /Spaw/lib/tollbars/nombredelatoolbar/nombre_toolbar_data.inc 
+
+Estos archivos están creados a base de arrays, en ellos puedes especificar, donde y con que diseño quieres colocar los botones de opciones del editor. 
+
+Por último nos uqeda por reseñar la opción "theme", peudes elegir entre blue, classic, default y green, estos archivos son también localizables en la libreará del spaw, en la ruta /Spaw/lib/Themes/nombredeltheme/ 
+
+Dentro de cada theme encontrareis 3 carpetas diferentes /css donde podreis en dos archivos distintos configurar todos los estilos referentes al editor, /img, donde se encuentran las imágenes que mostrará el editor con ese theme, y /js donde se encuentra el archivo toolbar.js que se encarga de hacer el rool over de las imágenes entre otras cosas. 
+
+
+
+De este modo al incluir la sentencia para utilizar el editor, Spaw nos brinda una amplísima gama de posibilidades, puede ser incluido, en todos los módulos de Noticias, Contenidos, Análisis, Feedback, y cualquier opción que se contemple, veamos las opciones:
+
+$sw3 = new SPAW_Wysiwyg(
+'VARIABLE A CAMBIAR'           /*nombre*/,
+$VARIABLE_A_CAMBIAR         /*valor de la variable*/,
+'es'                                       /*lenguaje(es o en)*/,
+'nuke'                                   /*Toolbar (nuke, default, full, mini..)*/, 
+'blue'                                    /*theme (blue, green, classic..)*/,
+'100%'                                 /*anchura*/, 
+'300px'                                 /*altura*/);
+Editando esta configuración podremos tener un editar distinto en cada página, y jugando con los themes, estilos, imágenes y configuraciones pueden hacerse autenticas virguerías.
+
+Desde aquí dar las gracias a la gente de Solmetra.com por este excepcional Editor, y a Xavi Gil por haberlo encontrado, traducido y dado pie para su implantación, grandes programadores hacen estas cosas.
+
+
+
+

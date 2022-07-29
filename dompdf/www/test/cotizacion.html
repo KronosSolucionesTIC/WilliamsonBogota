@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<link rel='STYLESHEET' href='../css/print_static.css' type='text/css' />
+<link rel='STYLESHEET' href='../../../css/print_static.css' type='text/css' />
+	<body>
+		<div id='body'>
+		<div id='section_header'>
+		</div>
+		
+		<div id='content'>
+		<div class='page' style='font-size: 7pt'>
+		<table style='width: 100%;' cellpadding='-1' cellspacing='0' border='1' class='change_order_items'  >
+		<TR> <script type="text/php">
+	if ( isset($pdf) ) {
+	
+	  $font = Font_Metrics::get_font("verdana");
+	  $size = 6;
+	  $color = array(0,0,0);
+	  $text_height = Font_Metrics::get_font_height($font, $size);
+	
+	  $foot = $pdf->open_object();
+	  
+	  $w = $pdf->get_width();
+	  $h = $pdf->get_height();
+	
+	  // Draw a line along the bottom
+	  $y = $h - $text_height - 24;
+	  $pdf->line(16, $y, $w - 16, $y, $color, 0.5);
+	
+	  $y += $text_height;
+	
+	 
+	  //$pdf->text(100,100 , $text, $font, $size, $color);
+	  $pdf->close_object();
+	  $pdf->add_object($foot, "all");
+	
+	  global $initials;
+	  $initials = $pdf->open_object();
+	  
+	  // Add an initals box
+	  
+	  $text = "Elaborado por: DIANA CORNEJO";
+	  $width = Font_Metrics::get_text_width($text, $font, $size);
+	  $pdf->text($w - 220 - $width - 150, $y, $text, $font, $size, $color);
+	 
+	  $text = "Revisado por: NIDIA CARRILLO";
+	  $width = Font_Metrics::get_text_width($text, $font, $size);
+	  $pdf->text($w - 120 - $width - 150, $y, $text, $font, $size, $color);
+	  
+	  $text = "Aprobado por: GILBERTO MENDEZ";
+	  $width = Font_Metrics::get_text_width($text, $font, $size);
+	  $pdf->text($w - 20 - $width - 150, $y, $text, $font, $size, $color);
+	 
+	 $fecha=date("Y-m-d");
+	  $text = "FECHA: $fecha";
+	  $width = Font_Metrics::get_text_width($text, $font, $size);
+	  $pdf->text($w - 16 - $width - 38, $y, $text, $font, $size, $color);
+	
+	  $pdf->close_object();
+	  $pdf->add_object($initials);
+	
+	  $text = "Pagina {PAGE_NUM} de {PAGE_COUNT}";  
+	
+	  // Center the text
+	  $width = Font_Metrics::get_text_width("Page 1 of 2", $font, $size);
+	  $pdf->page_text($width, $y, $text, $font, $size, $color);
+	  
+	}
+	</script><TD id='td_7' rowspan='3' align='center'><table style='width: 60%' border='0' align='center'>
+        <tr><td align='center'><img src='../../../images/logoSP.jpg' width='160' height='74'></td></tr>
+      </table></TD><TD id='td_2' align='center' class='normal'><strong>FORMATO DE COTIZACION </strong></TD>
+<TD id='td_3' align='center' class='normal'><strong>VERSION 1</strong></TD>
+</TR><TR>
+<TD id='td_5' align='center' class='normal'><strong>FIA-DCM-052</strong></TD>
+<TD id='td_6' align='center' class='normal'><strong>FECHA FEBRERO DE 2008</strong></TD>
+</TR><TR>
+<TD id='td_8' align='center' class='normal'><strong>COTIZACION No </strong> </TD>
+<TD id='td_9' align='center' class='normal'><strong>PAGINA 1 DE 2</strong></TD>
+</TR>
+</table>
+</div>
+<table style='width: 100%; font-size: 8pt;' ><tr><td width='46%' valign='top'>
+   <table style='width: 100%; font-size: 8pt;' ><tr><td width='46%' valign='top'>
+	<table style='width: 100%;' border='1' bordercolor='#000000' cellpadding='0' cellspacing='0'>
+  <tr>
+    <td bgcolor='#FFFFFF'><table style='width: 97%;' border='0' cellpadding='1' bordercolor='#000000' >
+      <tr>
+        <td width='35%' class='even_row_1'><strong>FECHA</strong></td>
+        <td width='65%' class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>SE&Ntilde;ORES</strong></td>
+        <td class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>ATN. SR</strong></td>
+        <td class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>E-MAIL</strong></td><td class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>MERCANCIA:</strong></td>
+        <td class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>TIPO:</strong></td>
+        <td class='even_row_1'></td>
+      </tr>
+      <tr>
+        <td class='even_row_1'><strong>MONEDA</strong></td>
+        <td class='even_row_1'></td>
+        </tr>
+      <tr>
+        <td class='even_row_1'><strong>TERMINO DE NEGOCIACION</strong></td>
+        <td class='even_row_1'></td>
+      </tr>
+    </table>
+	
+	 </td></tr></table></td>
+		<td style='width:2%'>&nbsp;</td>
+		<td width='47%' valign='top'><table width='100%' border='1' bordercolor='#000000' cellpadding='0' cellspacing='0'>
+          <tr>
+            <td bgcolor='#FFFFFF'  valign='top'>
+			<table width='98%' border='0' align='center' >
+          <tr><td class='even_row_1' align='center'>SPEED TRANSPORT DE COLOMBIA S.A.</td>
+          </tr>
+          <tr>
+            <td class='even_row_1' align='center'>NIT 8605119347</td>
+          </tr>
+          <tr>
+            <td class='even_row_1' align='center'>AK 97 N. 24C - 23 BOD. 2</td>
+          </tr>
+		   <tr>
+            <td class='even_row_1' align='center'>PBX 4263636</td>
+          </tr>
+		   <tr>
+            <td class='even_row_1' align='center'>FAX 4223905</td>
+          </tr>
+		   
+		   <tr>
+            <td class='even_row_1' align='center'>speedger@speedcolombia,.com</td>
+          </tr>
+		   <tr>
+            <td class='even_row_1' align='center'></td>
+          </tr>
+		   <tr>
+		     <td class='even_row_1' align='center'>www.speedcolombia.com</td>
+		     </tr> <tr>
+		     <td class='even_row_1' align='center'>&nbsp;</td>
+		     </tr>
+		   <tr>
+		     <td class='even_row_1' align='center'>&nbsp;</td>
+		     </tr>
+		   <tr>
+		     <td class='even_row_1' align='center'>&nbsp;</td>
+		     </tr>
+		   <tr>
+		     <td class='even_row_1' align='center'>&nbsp;</td>
+		     </tr>
+		  <p>&nbsp;<BR/><p>&nbsp;<BR/>
+      </table> </td></tr></table></td></tr></table>
+	  
+	 <table style='width: 100%;  font-size: 8pt;'>
+	<tr><td style='width: 100%;  font-size: 8pt; text-align:justify' class='change_order_items'>DE ACUERDO CON SU AMABLE SOLICITUD DE COTIZACION DE TRANSPORTE INTERNACIONAL A CONTINUACION NOS PERMITIMOS INFORMAR LAS TARIFAS VIGENTES DE CARGA NO PELIGROSA PARA DICHO TRAYECTO, LAS CUALES ESTAMOS SEGUROS SERAN FAVORABLE A SU INTERES.</td></tr>
+	<tr>
+ 		<td>&nbsp;</td>
+	</tr>
+	<tr>
+      <td><table style='width: 100%;' cellpadding='-1' cellspacing='0' border='1' class='change_order_items' >
+           <tr>
+            <td colspan='4' class='subfongris'>
+              </td>
+            </tr>
+          <tr>
+            <td colspan='4' class='even_row_1'>&nbsp;&nbsp;COTIZACION BASADA EN </td>
+            </tr>
+		  <tr>
+            <td class='even_row_1'>&nbsp;&nbsp;No PIEZAS</td>
+            <td class='even_row_1'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+            <td class='even_row_1'>&nbsp;&nbsp;PESO BRUTO KGS</td>
+            <td class='even_row_1'>&nbsp;&nbsp;0.00</td>
+          </tr>
+          <tr>
+            <td class='even_row_1'>&nbsp;&nbsp;KILO VOLUMEN</td>
+            <td class='even_row_1'>&nbsp;&nbsp;0.00</td>
+            <td class='even_row_1'>&nbsp;&nbsp;VALOR SEGUN TERMINO ADUANA USD</td>
+            <td class='even_row_1'>&nbsp;&nbsp;0.00</td>
+          </tr>
+          <tr>
+            <td class='even_row_1'>&nbsp;&nbsp;VOLUMEN (m&sup3;)</td>
+        
+		    <td class='even_row_1'>&nbsp;&nbsp;0.00</td>
+		
+		 
+            <td  class='even_row_1'>&nbsp;&nbsp;TRAYECTO</td>
+            <td  class='even_row_1'>&nbsp;&nbsp; / </td>
+          </tr>
+      </table></td></tr><tr><td>&nbsp;</td></tr><tr><td>
+	  
+	   <table style='width: 100%;' cellpadding='-1' cellspacing='0' border='1' class='change_order_items'>
+  <tr>
+    <td width='6%' class='subfongris'>PAIS</td>
+    <td width='6%' class='subfongris'>ORIGEN</td> <td style='width:5%' class='subfongris'>TIEMPO DE TRANSITO </td>
+    <td style='width:5%' class='subfongris'>FRECUENCIA</td>
+    <td style='width:5%' class='subfongris'>TARIFA VIGENTE </td>
+  	</tr>
+  	<tr>
+		<td  class='even_row_1' valign='middle'>&nbsp;&nbsp;</td>
+		<td  class='even_row_1' valign='middle'>&nbsp;&nbsp;</td></tr>
+	 </table>
+	 </td>
+	 </tr>
+	 </table>
+	 <table style='width: 100%' cellpadding='-1' cellspacing='0' border='1' class='change_order_items'>
+	<tr>
+	<td colspan='7' align='center' class='subfongris'>COSTOS NO INCLUIDOS EN LAS TARIFAS</td>
+	</tr>
+	<tr>
+	<th colspan='2' rowspan='2' class='subfongris'>RECARGO EN ORIGEN </th>
+	<td width='9%' class='subfongris' style='border-right-style: none'>TARIFAS</td>
+	<td colspan='2' style='border-right-style: none' class='subfongris'>MINIMA</td>
+	<td colspan='2' style='text-align: center' class='subfongris'>LIQUIDACION</td>
+	</tr>
+	<tr>
+	<td class='subfongris'></td>
+	<td width='9%' class='subfongris'>USD</td>
+	<td width='9%' class='subfongris'>PESOS</td>
+	<td width='10%' class='subfongris'>USD</td>
+	<td width='11%' class='subfongris'>PESOS</td>
+	</tr>
+	   <tr>
+	   <td colspan='3' style='text-align: left;'>&nbsp;&nbsp;Tasa de cambio aproximada para la liquidacion USD - $ 0.00&nbsp;&nbsp;</td>
+  <td colspan='2' style='text-align: right;'><strong>VALOR APROXIMADO : &nbsp;&nbsp;</strong></td></tr>
+		  <tr>
+		    <td colspan='7' style='text-align: left;'>&nbsp;&nbsp;Tasa de cambio donde se origina el embarque  - USD &nbsp; 0.00000&nbsp;&nbsp; </td>
+       </tr>
+		  <tr>
+			<td colspan='7' style='text-align: left;'>&nbsp;&nbsp;Ruta de embarque &nbsp;&nbsp;</td></tr></table>
+		 <table align='left' style='width: 100%; text-align:justify; font-size: 12px; font-family:verdana,sans-serif'>
+ 		<tr>
+		<td colspan='2' style='text-align:justify; font-size: 12px; font-family:verdana,sans-serif' >Nota:</td>
+	   </tr>
+	   <tr>
+  		<td colspan='3' style='text-align:justify; font-size: 10px; font-family:verdana,sans-serif'></td>
+	   </tr><tr>
+		 <td colspan='3' style='text-align:justify; font-size: 12px'><strong> CONDICIONES GENERALES DE LA OFERTA</strong>
+
+<p>Las siguientes son las CONDICIONES GENERALES de nuestra oferta de servicios. Ellas se consideran aceptadas 
+una vez recibamos las instrucciones y confirmacion para efectuar el embarque declarado y reconociendo el caracter 
+del Contratante en todas las obligaciones:</p>
+
+
+
+<p>1. El aceptante de esta oferta de cotización de servicios desde ya se da por enterado y aceptando que 
+SPEED TRANSPORT DE COLOMBIA S.A. es Agente Internacionla de Carga y NO Comisionista de Transporte 
+por lo cual se conviene que la citada empresa no es solidaria con las obligaciones del Transportador.(Art.1313 C.Co)</p>
+
+
+
+<p>2. Al aceptar la oferta, se reconoce el caracter ejecutivo de las obligaciones que se derivan de la misma, reconociendo 
+como titulo ejecutivo todas las facturas y cuentas de cobro que emita SPEED TRANSPORT DDE COLOMBIA S.A. </p>
+
+
+<p>incluyendo las variaciones de precios u otras condiciones que no siendo parte de la oferta inicial, se causen como 
+gastos asociados a los servicios prestados.</p>
+
+
+
+<p>3. Nuestras facturas se deberan cancelar a su vencimiento, entendiendose a su renuncia  a los requerimientos 
+para ser constituidos en mora.</p>
+
+
+
+<br />4. Se autoriza a SPEED TRANSPORT DE COLOMBIA S.A. para que reporte, procese y divulgue a las entidades 
+financieras, centrales de riesgos o cualquier otra entidad que maneje o administre bases de datos con los mismos
+ fines, toda la información referente a mi comportamiento comercial.
+
+<p>5. En el momento de nacionalizar la mercancia es obligatorio la presentación del documento de transporte original. 
+La información de la mercancía para la elaboración de los documentos de transporte es tomada directamente de 
+datos suministrados por ustedes, la cual debe ser por escrito.
+</p>
+
+<p>6. Favor informar a sus proveedores los perjuicios que ocasiona la información incorrecta en los documentos
+(peso, volumen, número de piezas, descripción de la mercancía, etc.). El importador asumira las multas o sanciones 
+aduaneras originadas por la información errónea dada por parte del exportador e importador al igual que el costo de 
+bodegajes y /o alquiler de contenedor y otros eventos ajenos a SPEED TRANSPORT DE COLOMBIA S.A
+(como huelgas, festivos , reinados, etc.) SPEED TRANSPORT DE COLOMBIA S.A.no se responsabilizará en ningun caso
+</p>
+
+
+<p>7. DEVOLUCIONES DEL CONTENEDOR: Se facturará al costo de la naviera en caso de no ser recibido en el interior. 
+Los costos de inspección de contenedor en el puesto y asi como los daños y limpieza serán cobrados cuando haya lugar a 
+estos y se facturaran adjuntando el soporte correspondiente.
+
+</p>
+
+<p>8. NORMA INTERNACIONAL PARA MEDIDAS FITOSANITARIAS - NIMF No. 15 (ISPM15): Informamos a nuestros clientes 
+que son responsables exclusivos del debido cumplimiento de la norma sobre embalajes de madera. SPEED TRANSPORT 
+DE COLOMBIA S.A. no asume ninguna clase de responsabilidad por las consecuencias que genere el incumplimiento de 
+dicha norma.
+</p>
+
+
+<p>9. El aceptante de esta oferta de servicios  o cotización, declara desde ya a SPEED TRANSPORT DE COLOMBIA S.A. 
+libre de cualquier responsabilidad u obligación a indemnizar por acciones u omisiones de terceros (transportadores, agentes
+ aduaneros, operadores portuarios, autoridades publicas, huelguistas, etc.) o por hechos de la naturaleza que motiven la 
+destrucción de las mercancías, averías, demoras en su entrega, perdidas, saqueos o sobrecostos en las operaciones como
+ gastos de almacenamiento, demora de contenedores, demora o cambios de medio de transporte, en operaciones, aumentos 
+de flete, sanciones impuestas por particulares o autoridades, etc. obligándose el contratante a reembolsar a SPEED 
+TRANSPORT DE COLOMBIA S.A. tales sumas de dinero en caso de que la citada empresa pague o asuma previamente 
+tales gastos o costos.
+</p>
+
+
+<p>10. Las obligaciones y derechos que se deriven de la presente oferta se regularan por el Código de Comercio y la Ley 
+Mercantil dde Colombia; teniéndose como jurisdicción contractual al mismo país.
+</p>
+
+
+<br />Esperamos que esta oferta se de su mayor interés. En caso de necesitar información no dude en contactarse con nosotros.
+
+
+</td>
+		 </tr>
+		
+		
+		 <table  style='width:100%' >
+		 <tr>
+    <td><br/><br/><br/><p>Giorgio Lamberti<br/>
+     Gerente General<br/>
+    speedcom@speedcolombia.com<br/></td> 
+   <td><br/><br/><br/><p><br/>
+    <br/>
+	<br/></td>
+  </tr>
+       </table></p></td>
+	   </tr>
+    </table>
+   </body>
+</html>

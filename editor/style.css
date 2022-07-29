@@ -1,0 +1,347 @@
+/* A BIG IDEA :: by Payal Dhar (http://writeside.net/) 
+Feel free to use or modify, but do keep the credit.*/
+
+body {
+  	background: #FFF;
+	padding: 0;
+	margin: 0;
+	color: #454456;
+	text-align: center;
+	font: 1em Arial, Helvetica, sans-serif;
+	}
+
+/*Style for the page header */
+#header	{
+	background: #FFF url(images/logo.png) top left no-repeat;
+	text-align: left;
+	margin: 0.5em auto 0 auto;
+	width: 900px;
+} 
+
+#header	h1 {
+    font: 3em sans-serif;
+    border: 0;
+    color: #666666;
+    margin: 0 auto 0 120px;
+}
+#header	h2 {
+    font: bold 0.7em arial, helvetica, sans-serif;
+    color: #4A4A59;
+    margin: 0 auto 0 115px;
+}
+	
+/*Style for the nav menu */
+#nav {
+	position: relative;
+	margin: -18px 0 20px auto;
+	width: 900px;
+	line-height: 2em;
+	}
+	
+#nav ul { 
+	padding:5px; 
+	margin:0; 
+	padding:0; 
+} 
+
+#nav ul li { 
+	float:right; 
+	list-style:none; 
+	margin:0; 
+	padding:0; 
+	} 
+	
+#nav a, a:link	{
+	color:#2e3e4d;
+	display:block; 
+	margin:0; 
+	padding: 2px 15px; 
+	text-align:center; 
+	background: #ecedef;
+	}
+
+#nav a:hover	{
+	color:  #ecedef;
+	background: #777688;
+	text-decoration: none;
+}
+
+/* Styles for the text area */
+#text {
+   	position: relative;
+    margin: 0px auto 50px auto;
+	padding: 0;
+	width: 900px;
+	text-align: left;
+	line-height: 1.25em;
+	border-top: 3px solid #fe6a00;
+}
+
+a, a:link	{
+	color: #355579;
+	background-color: inherit;
+	text-decoration: none;
+	display: inline;
+	padding: 0;
+}
+	
+a:hover	{
+	color: #454456;
+	text-decoration: underline;
+}
+	
+p {
+	 margin: 0;
+	 line-height: 1.5em;
+	 padding-left: 20px;
+	
+}
+.nota {
+     font: 0.9em arial, helvetica, sans-serif; 
+     margin: 0;
+	 line-height: 1.2em;
+	 padding-left: 40px;
+}
+
+.pie {
+     font: 0.8em arial, helvetica, sans-serif; 
+     color: #000;
+     margin: 0;
+     line-height: 0.8em;
+	 padding-left: 40px;
+	 text-align: center;
+}
+
+img.texto {
+     border: 1px solid #ecedef;
+     padding: 0.6em;
+     margin-bottom: 0;
+}
+
+li {
+    line-height: 1.5em;
+    font-size: 1em;
+}
+	
+h2	{
+	font: 1.25em arial, serif;
+	color: #575757;
+	margin: 0;
+	padding: 10px;
+		
+}
+	
+h3	{
+	font: 1.15em helvetica, serif;
+	color: #575757;
+	margin: 0;
+	padding: 15px;
+}
+
+h4	{
+	font: bold 1em helvetica, serif;
+	color: #575757;
+	margin: 0;
+	padding: 20px;
+}
+acronym, abbr {
+	border-bottom: 1px dotted #0c6bf0;
+	cursor: help;
+	letter-spacing: .07em;
+}
+
+.etiquetags {
+    font: bold 1em sans-serif;
+}
+
+/* Style for the footer */
+
+#footer	{
+	padding: 2px;
+	margin: auto; 
+	background-color: #EFE9ED;
+	font-size: 0.8em;
+	width: 900px;
+	clear: left;
+}
+
+/*Style for demo page*/
+
+
+#ed_toolbar { 
+   margin: 0px;  
+   text-align: left; 
+   background-color: #ecedef;
+   width: 480px; 
+}
+
+.ed_button { 
+   width: 10px; 
+   height: 10px; 
+   border: 1px solid #ecedef;
+   margin: 1px; 
+   padding: 1px; 
+   background: transparent; 
+}
+
+.ed_button_over { 
+   background-color: #fffe81; 
+   width: 10px; 
+   height: 10px; 
+   border: 1px solid #999999; 
+   margin: 1px; 
+   padding: 1px;}
+
+.ed_sep_botton { 
+   width: 2px;
+   margin: 0; 
+}
+
+.ed_button_plegar {
+   width: 22px;
+   border: 1px solid #c9dbf4; 
+   margin: 1px; 
+   padding: 1px; 
+   background: transparent; 
+}
+
+#ed_editor {
+   width: 500px; 
+   float: left;
+}
+
+#ed_editor select {
+   background: #fcfdff;
+   color: #666666;
+   margin-bottom: 4px;	
+} 
+
+
+#ed_previo {
+   overflow:auto;
+   height:400px;
+}
+
+#ed_previo blockquote {
+	font: italic 0.9em arial, helvetica, sans-serif;
+	border-left : 2px solid #999;
+	padding-left : 1em;
+}
+
+
+
+#ed_previo q {
+   font: italic 0.9em arial, helvetica, sans-serif;
+}
+
+
+#ed_previo cite {
+   font: italic 0.9em arial, helvetica, sans-serif;
+   color: #000;
+}
+
+
+#ed_previo code {
+}
+
+
+#ed_previo kbd {
+}
+
+
+#ed_previo samp {
+}
+
+
+#ed_previo pre {
+}
+
+
+#ed_previo var {
+}
+
+
+#ed_previo h1 {
+   font: bold 1.1em arial, helvetica, sans-serif;
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+
+#ed_previo h2 {
+   font: bold 1em arial, helvetica, sans-serif;
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+
+#ed_previo h3 {
+   font: bold 0.95em arial, helvetica, sans-serif;
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+#ed_previo h4 {
+   font: bold 0.9em arial, helvetica, sans-serif;
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+#ed_previo img {
+	margin: 1em;
+	border: 1px solid #ccc;
+	padding: 4px;
+	background: #fff;
+}
+
+#ed_previo img.izq {
+	float: left;
+	margin: 1em;
+	border: 1px solid #ccc;
+	padding: 4px;
+	background: #fff;
+}
+
+#ed_previo img.der {
+	float: right;
+	margin: 0.5em;
+	border: 1px solid #ccc;
+	padding: 4px;
+	background: #fff;
+}
+
+#ed_previo p {
+   font: 0.9em arial, helvetica, sans-serif;
+   color: #000;
+}
+
+#ed_previo li {
+   font: 0.9em arial, helvetica, sans-serif;
+   color: #000;
+}
+
+acronym, abbr {
+	border-bottom: 1px dotted #0c6bf0;
+	cursor: help;
+	letter-spacing: .07em;
+}
+
+.footnotes {
+     font-size: 0.6em;
+}
+
+
+#ed_tit_previo {
+   margin-left: 510px;
+}
+
+.ed_text_demo {
+	clear: left;
+	padding: 0.5em;
+	
+}
+

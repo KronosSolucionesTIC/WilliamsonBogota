@@ -1,0 +1,76 @@
+.titulogran {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+}
+.boton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	margin: 2px;
+	padding: 2px;
+	border: 1px solid #333333;
+}
+
+
+
+.textfield003 {
+
+	font-family: Arial, Helvetica, sans-serif;
+	height: 12px;
+	width: 150px;
+	font-size: 10px;
+}
+
+
+
+
+
+.subfongris {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	margin: 2px;
+	padding: 2px;
+	background-color: #999999;
+	text-align: center;
+}
+
+.subfongris1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	margin: 2px;
+	padding: 2px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+.txtablas {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	margin: 2px;
+	padding: 2px;
+	background-color: #FFFFFF;
+}
+
+.box {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: 1px solid #666666;
+}
